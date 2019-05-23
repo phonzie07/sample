@@ -1,0 +1,9 @@
+server:
+  port: 8888
+logger:
+  toggle: true
+  serviceUri: test
+
+logging:
+    level:
+      root: 'info'
