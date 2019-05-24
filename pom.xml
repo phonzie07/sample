@@ -22,18 +22,13 @@
             <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>com.generic.core.framework</groupId>
-            <artifactId>utils</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.generic.core.framework</groupId>-->
 <!--            <artifactId>logger</artifactId>-->
 <!--            <version>1.0.0-SNAPSHOT</version>-->
 <!--            <scope>compile</scope>-->
 <!--        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

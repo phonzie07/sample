@@ -1,8 +1,9 @@
 spring:
   cloud:
     config:
+      name:  test-config,errorcode-constants,db,eureka
       uri: http://localhost:8080
   profiles:
     active: local
   application:
-    name:  test-config,errorcode-constants,db
+    name:  test-config
