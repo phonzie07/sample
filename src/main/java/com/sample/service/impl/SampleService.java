@@ -2,7 +2,9 @@ package com.sample.service.impl;
 
 import com.generic.utils.MapperUtil;
 import com.sample.model.TestRequestModel;
+import com.sample.model.entity.Company;
 import com.sample.model.entity.TestModel;
+import com.sample.repository.CompanyRepository;
 import com.sample.repository.TestModelRepository;
 import com.sample.service.ISampleService;
 import lombok.extern.log4j.Log4j2;
@@ -23,6 +25,8 @@ public class SampleService implements ISampleService {
 
     @Autowired
     private TestModelRepository testModelRepository;
+    @Autowired
+    private CompanyRepository companyRepository;
 
     @Override
     public String test(TestRequestModel request) {
@@ -31,7 +35,7 @@ public class SampleService implements ISampleService {
     }
 
     @Override
-    public TestModel save(TestRequestModel request) {
+    public TestModel saveTest(TestRequestModel request) {
         TestModel saveModel = new TestModel();
         saveModel.setName(request.getName());
         TestModel result = testModelRepository.save(saveModel);
@@ -39,14 +43,32 @@ public class SampleService implements ISampleService {
     }
 
     @Override
-    public TestModel get(Long id) {
+    public TestModel getTestById(Long id) {
         TestModel tm = testModelRepository.findById(id).get();
         return tm;
     }
 
     @Override
-    public TestModel getByName(String name) {
+    public TestModel getTestByName(String name) {
         TestModel tm = testModelRepository.findByName(name);
         return tm;
+    }
+
+    @Override
+    public Company getCompanyByName(String name) {
+        Company company = companyRepository.findByName(name);
+        return company;
+    }
+
+    @Override
+    public Company saveCompany(Company request) {
+        Company result = companyRepository.save(request);
+        return result;
+    }
+
+    @Override
+    public Company getCompanyById(Long id) {
+        Company company = companyRepository.findById(id).get();
+        return company;
     }
 }

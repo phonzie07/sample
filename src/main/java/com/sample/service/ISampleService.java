@@ -1,6 +1,7 @@
 package com.sample.service;
 
 import com.sample.model.TestRequestModel;
+import com.sample.model.entity.Company;
 import com.sample.model.entity.TestModel;
 
 /**
@@ -22,7 +23,7 @@ public interface ISampleService {
      * @param request the api request log
      * @return
      */
-    TestModel save(TestRequestModel request);
+    TestModel saveTest(TestRequestModel request);
 
     /**
      * get test by id.
@@ -30,7 +31,7 @@ public interface ISampleService {
      * @param id the api request log
      * @return
      */
-    TestModel get(Long id);
+    TestModel getTestById(Long id);
 
     /**
      * get test by name.
@@ -38,6 +39,31 @@ public interface ISampleService {
      * @param name the api request log
      * @return
      */
-    TestModel getByName(String name);
+    TestModel getTestByName(String name);
+
+    /**
+     * get company by name.
+     *
+     * @param name the api request log
+     * @return
+     */
+    Company getCompanyByName(String name);
+
+    /**
+     * save Company.
+     *
+     * @param request the api request log
+     * @return
+     */
+    Company saveCompany(Company request);
+
+    /**
+     * get Company by id.
+     *
+     * @param id the api request log
+     * @return
+     */
+    Company getCompanyById(Long id);
+
 
 }
