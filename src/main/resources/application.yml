@@ -11,6 +11,7 @@ logging:
 # Datasource
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/test
-    username: postgres
-    password: root
+#    url: jdbc:postgresql://localhost:5432/base
+    url: jdbc:postgresql://altusdb.cepousbd7jvv.ap-southeast-1.rds.amazonaws.com:5432/base
+    username: altusDev
+    password: QwertY123!
