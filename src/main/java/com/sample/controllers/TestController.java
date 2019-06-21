@@ -113,4 +113,48 @@ public class TestController {
         result.addData(sampleService.getCompanyByName(name));
         return result;
     }
+
+    /**
+     * get List of Company.
+     *
+     * @return the response
+     */
+    @GetMapping("getCompanyList")
+    public EndpointResult getCompanyList() {
+        log.info("TestController getCompanyList:");
+        EndpointResult result = new EndpointResult();
+        result.addData(sampleService.getCompanyList());
+        return result;
+    }
+
+
+    /**
+     *  save Company by new description
+     *
+     * @param desc
+     * @param companyId
+     * @return
+     */
+    @GetMapping("saveCompanyDescById")
+    public EndpointResult saveCompanyDescById(@RequestParam("desc") String desc, Long companyId) {
+        log.info("TestController saveCompanyDescById:");
+        EndpointResult result = new EndpointResult();
+        result.addData(sampleService.saveCompanyDescById(desc,companyId));
+        return result;
+    }
+
+    /**
+     *  save Company by new description
+     *
+     * @param desc
+     * @param name
+     * @return
+     */
+    @GetMapping("saveCompanyDescByName")
+    public EndpointResult saveCompanyDescByName(@RequestParam("desc") String desc, String name) {
+        log.info("TestController saveCompanyDescByName:");
+        EndpointResult result = new EndpointResult();
+        result.addData(sampleService.saveCompanyDescByName(desc,name));
+        return result;
+    }
 }

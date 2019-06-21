@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 /**
  * The type Log service.
@@ -69,6 +71,36 @@ public class SampleService implements ISampleService {
     @Override
     public Company getCompanyById(Long id) {
         Company company = companyRepository.findById(id).get();
+        return company;
+    }
+
+    @Override
+    public List<Company> getCompanyList() {
+        List<Company> companyList = companyRepository.findAll();
+        return companyList;
+    }
+
+    @Override
+    public Company saveCompanyDescById(String desc, Long companyId) {
+        Company company = companyRepository.findById(companyId).get();
+        log.info("old Company desc: "+ company.getDescription());
+        company.setDescription(desc);
+        log.info("new Company desc: "+ company.getDescription());
+        company = companyRepository.save(company);
+        log.info("new Company: "+ MapperUtil.objectToJson(company));
+
+        return company;
+    }
+
+    @Override
+    public Company saveCompanyDescByName(String desc, String name) {
+        Company company = companyRepository.findByName(name);
+        log.info("old Company desc: "+ company.getDescription());
+        company.setDescription(desc);
+        log.info("new Company desc: "+ company.getDescription());
+        company = companyRepository.save(company);
+        log.info("new Company: "+ MapperUtil.objectToJson(company));
+
         return company;
     }
 }

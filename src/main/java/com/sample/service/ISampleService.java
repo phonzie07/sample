@@ -4,6 +4,8 @@ import com.sample.model.TestRequestModel;
 import com.sample.model.entity.Company;
 import com.sample.model.entity.TestModel;
 
+import java.util.List;
+
 /**
  * The interface Sample service.
  */
@@ -64,6 +66,31 @@ public interface ISampleService {
      * @return
      */
     Company getCompanyById(Long id);
+
+    /**
+     * get List of Company
+     *
+     * @return
+     */
+    List<Company> getCompanyList();
+
+    /**
+     *  save Company by new description
+     *
+     * @param desc
+     * @param companyId
+     * @return
+     */
+    Company saveCompanyDescById(String desc, Long companyId);
+
+    /**
+     *  save Company by new description
+     *
+     * @param desc
+     * @param name
+     * @return
+     */
+    Company saveCompanyDescByName(String desc, String name);
 
 
 }
